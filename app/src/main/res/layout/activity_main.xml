@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e1e2e"
+    tools:context=".MainActivity">
+
+    <!-- Title (No change) -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Router"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Input Field (MOVED TO TOP) -->
+    <EditText
+        android:id="@+id/urlInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter domain pattern"
+        android:textColorHint="#99FFFFFF"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#4ecdc4"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/addButton" />
+
+    <!-- Add Button (MOVED TO TOP) -->
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:backgroundTint="#4ecdc4"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toTopOf="@id/urlInputEditText"
+        app:layout_constraintBottom_toBottomOf="@id/urlInputEditText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- URL List (Constraints updated) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/urlRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/urlInputEditText"
+        app:layout_constraintBottom_toTopOf="@id/debugSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_url_pattern" />
+
+    <!-- Debug Switch (MOVED TO BOTTOM) -->
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/debugSwitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Enable Debug Mode"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
