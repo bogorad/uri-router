@@ -27,7 +27,8 @@
         <activity
             android:name=".RouterActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.Translucent">
+            android:theme="@style/Theme.App.Translucent"
+            android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
